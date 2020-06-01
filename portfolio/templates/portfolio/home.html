@@ -1,0 +1,155 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section class="landing-section landing-main">
+    <div class="landing-section-content">
+        <img class="portrait" src="{% static 'portfolio/portfolio_foto.jpg' %}">
+        <h1 class="brand">Michał Niemiec</h1>
+        <h2>
+            <span class="brand-text">Beginner Programmer</span>
+        </h2>
+        <h3 class="landing-main-text">
+            Aspiring junior developer with Python & Django and knowledge of GIT, HTML, CSS, BootStrap, Heroku and
+            others.<br>
+            I have over 4 years of experience in IT and strong background in 3d graphic.<br>
+            For more information and my projects please scroll down.
+        </h3>
+    </div>
+    <div>
+        <a target="none" href="https://www.linkedin.com/in/micha%C5%82-niemiec-935460183/">
+            <div class="social"><img class="social" src="{% static 'portfolio/mn_linkedin.png' %}"></div>
+        </a>
+        <a target="none" href="https://github.com/m-niemiec?tab=repositories">
+            <div class="social"><img class="social" src="{% static 'portfolio/mn_github.png' %}"></div>
+        </a>
+    </div>
+</section>
+<section class="landing-section-secondary">
+    <section class="landing-feature feature-music-services">
+        <div style="text-align:center;">
+            <h2>My skills:</h2>
+            <br>
+            <table class="table table-borderless">
+                <tbody>
+                <tr>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_python.png' %}"><br>
+                        <h3>Python</h3>
+                    </td>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_django.png' %}"><br>
+                        <h3>Django</h3>
+                    </td>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_git.png' %}"><br>
+                        <h3>GIT</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_html.png' %}"><br>
+                        <h3>HTML</h3>
+                    </td>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_css.png' %}"><br>
+                        <h3>CSS</h3>
+                    </td>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_bootstrap.png' %}"><br>
+                        <h3>BootStrap</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_heroku.png' %}"><br>
+                        <h3>Heroku</h3>
+                    </td>
+                    <td>
+                        <img class="icon" src="{% static 'portfolio/icon_pythonanywhere.png' %}"><br>
+                        <h3>PythonAnywhere</h3>
+                    </td>
+                </tr>
+        </div>
+        </tbody>
+        </table>
+        </div><br>
+
+        <div style="text-align:center;">
+            <h2>My additional attributes:</h2><br>
+        </div>
+        <ul>
+            <h3>
+                <li>I am in IT industry for over 4 years now.</li>
+                <li>Experience with SVN, Perforce and Agile workflow.</li>
+                <li>Knowledge of Target Process, TeamGantt and Jira.</li>
+                <li>Skills in Photoshop and many others 3D software and game engines.</li>
+                <li>Languages: Polish - Native and English - Advanced.</li>
+            </h3>
+        </ul>
+    </section>
+</section>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <center><h2>My projects:</h2></center>
+        <br><br>
+        <div class="row row-cols-1 row-cols-md-2">
+            {% for project in projects %}
+            <div class="col sm-6">
+                <div class="card mt-4 text-center">
+                    <div class="card-img-bg">
+                        <img src="{{ project.thumbnail.url }}" class="card-img" alt="{{ project.title }}">
+                    </div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-between">
+                        <h2 class="card-title">{{ project.title }}</h2>
+                        <div class="vertical-center">
+                            <button type="button" class="btn btn-secondary btn-lg">Details</button>
+                            <button type="button" class="btn btn-secondary btn-lg">Code</button>
+                            <button type="button" class="btn btn-secondary btn-lg">Live</button>
+                        </div>
+                        <h5 class="card-text">{{ project.description|safe }}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<section class="landing-section-contact">
+    <div class="landing-section-contact">
+        <center><h2>Contact me:</h2>
+            <h3>If I piqued your interest, you would like to ask me something, say hi or offer me a job, please
+                contact me through my<br><br> <a target="_blank"
+                                                 href="https://www.linkedin.com/in/micha%C5%82-niemiec-935460183/">LinkedIn profile</a><br><br>
+                Or send me an email:<br><br>
+                <script type="text/javascript">
+                    function gen_mail_to_link(lhs,rhs,subject) {
+                    document.write("<a href=\"mailto");
+                    document.write(":" + lhs + "@");
+                    document.write(rhs + "?subject=" + subject + "\">" + lhs + "@" + rhs + "<\/a>");
+                    }
+                </script>
+                <script type="text/javascript">
+                    gen_mail_to_link('michal.niemiec.it','gmail.com','Hello');
+                </script>
+                <noscript>
+                    <em>Email address is protected by JavaScript. Please activate JavaScript to see my email.</em>
+                </noscript>
+            </h3>
+        </center>
+    </div>
+</section>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Notes</title>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-2">Python</h1>
+        <p class="lead">My various notes and code snippets for Python.</p>
+        <hr class="my-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+
+                    <nav id="navbar-example3" class="navbar sticky-top navbar-dark bg-dark">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#notes"><h4>Notes</h4></a>
+                            {% for note in python_notes %}
+                            <a class="nav-link" href="#note_{{ forloop.counter }}">{{ note.title }}</a>
+                            {% endfor %}
+
+                            <a class="nav-link" href="#snippets"><h4>Code Snippets</h4></a>
+                            {% for note in python_snippets %}
+                            <a class="nav-link" href="#snippet_{{ forloop.counter }}">{{ note.title }}</a>
+                            {% endfor %}
+                        </nav>
+                    </nav>
+                </div>
+                <script>
+                    $('body').scrollspy({ target: '#navbar-example3' })
+                </script>
+
+                <div id="content" class="col-9">
+                    <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                        <h1 id="notes">Notes</h1>
+
+                        {% for note in python_notes %}
+                        <h4 id="note_{{ forloop.counter }}">{{ note.title }}</h4>
+                        <h5>{{ note.description }}</h5>
+                        <p>{{ note.details|safe }}</p>
+                        <hr class="my-4">
+                        {% endfor %}
+
+                        <h1 id="snippets">Code Snippets</h1>
+
+                        {% for snippet in python_snippets %}
+                        <h5 id="snippet_{{ forloop.counter }}">{{ note.title }}</h5>
+                        <h5>{{ note.description }}</h5>
+                        <p>{{ note.details|safe }}</p>
+                        <hr class="my-4">
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}
