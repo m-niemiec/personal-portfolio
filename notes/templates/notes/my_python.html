@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-3">
 
-                    <nav id="navbar-example3" class="navbar sticky-top navbar-dark bg-dark">
+                    <nav id="navbar-example3" class="navbar sticky-top navbar-light">
                         <nav class="nav nav-pills flex-column">
                             <a class="nav-link" href="#notes"><h4>Notes</h4></a>
                             {% for note in python_notes %}
@@ -31,6 +31,7 @@
                         </nav>
                     </nav>
                 </div>
+
                 <script>
                     $('body').scrollspy({ target: '#navbar-example3' })
                 </script>
@@ -58,9 +59,12 @@
                     </div>
                 </div>
             </div>
-        </div><br><br>
+        </div>
+        <br><br>
     </div>
 </div>
+
+{% include 'portfolio/partials/contact_section.html' %}
 
 </body>
 </html>

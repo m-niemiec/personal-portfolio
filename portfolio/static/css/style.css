@@ -6,6 +6,10 @@ body {
      color: #212529 !important;
      text-decoration: underline !important;
 }
+ a:hover{
+     color: #4c555e !important;
+     text-decoration: none !important;
+}
  .landing-section {
      min-height: 100vh;
      width: 100%;
@@ -29,7 +33,7 @@ body {
      color: #e9ecef !important;
 }
  .landing-section-contact {
-     min-height: 35vh;
+     min-height: 45vh;
      width: 100%;
      display: flex;
      align-items: center;
@@ -122,10 +126,10 @@ body {
  .card-img-bg {
      background: #e9ecef !important;
 }
- .card-img-overlay>h2, .card-img-overlay>h5, .vertical-center>button{
+ .card-img-overlay>h2, .card-img-overlay>h5, .vertical-center>a{
      visibility:hidden;
 }
- .card-img-overlay:hover h2, .card-img-overlay:hover h5, .card-img-overlay:hover button{
+ .card-img-overlay:hover h2, .card-img-overlay:hover h5, .card-img-overlay:hover a{
      visibility: visible;
 }
  .card:hover .card-img-overlay p{
@@ -140,4 +144,32 @@ body {
      left: 50%;
      -ms-transform: translate(-50%, -50%);
      transform: translate(-50%, -50%);
+}
+ .dropdown-menu {
+     background-color:#e9ecef !important;
+}
+ .dropdown-item {
+     background-color:#e9ecef !important;
+}
+ .navbar-default .navbar-nav > .active{
+     color: #000;
+     background: #d65c14;
+}
+ .navbar .active{
+     background-color: #d1d4d7 !important;
+}
+ .navbar .nav-link{
+     font-size:0.9em !important;
+}
+ .navbar .nav-link {
+     padding-top: 0px !important;
+     padding-bottom: 0px !important;
+}
+ .navbar {
+     max-height: 100vh !important;
+     overflow-y: auto !important;
+}
+ .btn-outline-light:hover, .btn-outline-light:active, .btn-outline-light:visited {
+     background-color: #d1d4d7 !important;
+     border-color: #d1d4d7 !important;
 }

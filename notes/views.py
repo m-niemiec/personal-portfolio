@@ -16,11 +16,3 @@ def my_python(request):
         'python_snippets_number': python_snippets_number
     }
     return render(request, 'notes/my_python.html', context)
-
-
-def view_note(request, note_id):
-    note = get_object_or_404(Note, pk=note_id)
-    context = {
-        'note': note
-    }
-    return render(request, 'notes/view_note.html', context)
