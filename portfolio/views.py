@@ -12,7 +12,11 @@ def home(request):
 
 def project_details(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
+    next_project = Project.objects.filter(id__gt=project_id).order_by('id').first()
+    previous_project = Project.objects.filter(id__lt=project_id).order_by('-id').first()
     context = {
-        'project': project
+        'project': project,
+        'next_project': next_project,
+        'previous_project': previous_project
     }
     return render(request, 'portfolio/project_details.html', context)
