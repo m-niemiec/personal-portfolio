@@ -13,9 +13,9 @@
 <section class="landing-section landing-main">
     <div class="landing-section-content">
         <img class="portrait" src="{% static 'portfolio/portfolio_foto.jpg' %}">
-        <h1 class="brand">Michał Niemiec</h1>
+        <h1 class="name">Michał Niemiec</h1>
         <h2>
-            <span class="brand-text">Beginner Programmer</span>
+            <span class="name-text">Beginner Programmer</span>
         </h2>
         <h3 class="landing-main-text">
             Aspiring developer with Python & Django and knowledge of GIT, HTML, CSS, BootStrap, Heroku, PythonAnywhere and
@@ -34,11 +34,13 @@
     </div>
 </section>
 <section class="landing-section-secondary">
-    <section class="landing-feature feature-music-services">
+    <section class="landing-skills">
         <div style="text-align:center;">
             <h2>My skills:</h2>
             <br>
-            <table class="table table-borderless">
+            <div class="row justify-content-center">
+            <div class="table-responsive">
+            <table id="center" class="table table-borderless">
                 <tbody>
                 <tr>
                     <td>
@@ -75,13 +77,13 @@
                     </td>
                     <td>
                         <img class="icon" src="{% static 'portfolio/icon_pythonanywhere.png' %}"><br>
-                        <h3>PythonAnywhere</h3>
+                        <h3>Python<br>Anywhere</h3>
                     </td>
                 </tr>
         </div>
         </tbody>
         </table>
-        </div><br>
+        </div></div></div><br>
 
         <div style="text-align:center;">
             <h2>My additional attributes:</h2><br>
@@ -114,10 +116,10 @@
                         <div class="vertical-center">
                             <a class="btn btn-outline-light btn-lg" href="{% url 'project_details' project.id %}" role="button">Details</a>
                             {% if project.url_github %}
-                                <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" target="_blank" role="button">Code</a>
+                                <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" id="button_code" target="_blank" role="button">Code</a>
                             {% endif %}
                             {% if project.url_live %}
-                                <a class="btn btn-outline-light btn-lg" href="{{ project.url_live }}" target="_blank" role="button">Live</a>
+                                <a class="btn btn-outline-light btn-lg" href="{{ project.url_live }}" id="button_live" target="_blank" role="button">Live</a>
                             {% endif %}
                         </div>
                         <h5 class="card-text">{{ project.description|safe }}</h5>

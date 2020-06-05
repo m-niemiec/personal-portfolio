@@ -1,4 +1,57 @@
-body {
+@media only screen and (max-width: 815px) {
+     img.portrait {
+         float: left !important;
+         width: 120px !important;
+         padding: 10px !important;
+    }
+     .landing-section-content {
+         width: 90% !important;
+    }
+     .name {
+         font-size: 3em !important;
+    }
+     .name-text{
+         font-size: 0.8em !important;
+    }
+     .card-title{
+         font-size: 2em !important;
+    }
+     .card-text{
+         line-height: 1.5em !important;
+         height: 1.5em !important;
+         overflow: hidden !important;
+    }
+     .display-2{
+         margin-top: 20px !important;
+    }
+     .landing-skills{
+         width: 90% !important;
+         margin: auto !important;
+    }
+     .icon {
+         width: 75px !important;
+         padding: 0px !important;
+    }
+     .icon:hover {
+         -webkit-transform: scale(1.0) !important;
+         transform: scale(1.0) !important;
+    }
+     .table {
+         margin: auto !important;
+    }
+     #button_code, #button_live{
+         display: none;
+    }
+     #contact{
+         width: 90% !important;
+    }
+     .content{
+         -webkit-column-count: 1 !important;
+         -moz-column-count: 1 !important;
+         column-count: 1 !important;
+    }
+}
+ body {
      position: relative !important;
      background: #e9ecef !important;
 }
@@ -173,10 +226,10 @@ body {
      background-color: #d1d4d7 !important;
      border-color: #d1d4d7 !important;
 }
-.material-icons {
-    text-decoration: none !important;
-    color: #e9ecef !important;
-    background: #383838;
-    border-radius: 20%;
-    margin: 10px;
+ .material-icons {
+     text-decoration: none !important;
+     color: #e9ecef !important;
+     background: #383838;
+     border-radius: 20%;
+     margin: 10px;
 }

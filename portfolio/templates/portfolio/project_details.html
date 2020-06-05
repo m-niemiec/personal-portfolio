@@ -13,7 +13,7 @@
         <class="container">
             <h1 class="display-4">{{ project.title }}</h1>
             <br><br>
-            <img src="{{ project.screenshot_main.url }}" alt="{{ project.title }}">
+            <img class="d-block w-100" src="{{ project.screenshot_main.url }}" alt="{{ project.title }}">
             <br><br>
 
             <p class="lead">{{ project.description|safe }}</p>
@@ -53,7 +53,7 @@
                 </a>
             </div>
             {% endif %}<br>
-            
+
             {% if previous_project.id %}
                 <a href="{% url 'project_details' previous_project.id %}"><i class="material-icons" style="font-size:50px">chevron_left</i></a>
             {% endif %}
