@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Model for portfolio project entry.
 class Project(models.Model):
     title = models.CharField(max_length=300)
     thumbnail = models.ImageField(upload_to="portfolio/images/")

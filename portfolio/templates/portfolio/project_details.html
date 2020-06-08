@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
+<!--Project details section that is visible when user select "Details" button on project.-->
 <center>
     <br>
     <div class="jumbotron jumbotron-fluid">
@@ -16,10 +17,12 @@
             <img class="d-block w-100" src="{{ project.screenshot_main.url }}" alt="{{ project.title }}">
             <br><br>
 
+            <!--Project description and details have safe tag in order to render html elements like <br> etc.-->
             <p class="lead">{{ project.description|safe }}</p>
             <br><br>
             <p class="lead">{{ project.details|safe }}</p>
 
+            <!--If project have urls for github and/or live deploy they will be visible in buttons below.-->
             {% if project.url_github %}
             <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" target="_blank" role="button">View
                 Code</a>
@@ -30,6 +33,7 @@
             {% endif %}
 
             <br><br>
+            <!--If project have screenshots they will be displayed in bootstrap carousel.-->
             {% if project.screenshot_1 %}
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -54,11 +58,14 @@
             </div>
             {% endif %}<br>
 
+            <!--Buttons for Next and Previous project.-->
             {% if previous_project.id %}
-                <a href="{% url 'project_details' previous_project.id %}"><i class="material-icons" style="font-size:50px">chevron_left</i></a>
+                <a href="{% url 'project_details' previous_project.id %}"><i class="material-icons"
+                                                                             style="font-size:50px">chevron_left</i></a>
             {% endif %}
             {% if next_project.id %}
-                <a href="{% url 'project_details' next_project.id %}"><i class="material-icons" style="font-size:50px">chevron_right</i></a>
+                <a href="{% url 'project_details' next_project.id %}"><i class="material-icons"
+                                                                         style="font-size:50px">chevron_right</i></a>
             {% endif %}
 
 </center>

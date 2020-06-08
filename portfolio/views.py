@@ -10,6 +10,7 @@ def home(request):
     return render(request, 'portfolio/home.html', context)
 
 
+# Project details when you click "Details" from main Projects listing.
 def project_details(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
     next_project = Project.objects.filter(id__gt=project_id).order_by('id').first()

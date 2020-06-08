@@ -15,17 +15,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
+    <!--Additional CSS for Prism extension. It renders nice highlights for code snippets.-->
     <link href="{% static 'css/prism.css' %}" rel="stylesheet"/>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <title>Michał Niemiec Portfolio</title>
 </head>
 <body>
 
+<!--Loads local JS script for Prism extension. It renders nice highlights for code snippets.-->
 <script src="{% static 'js/prism.js' %}"></script>
 
+<!--Navbar-->
 <header id="menu" class="header">
     <a href="/" class="nav-link header-link">Portfolio</a>
 

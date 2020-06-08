@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<!--Main landing page section.-->
 <section class="landing-section landing-main">
     <div class="landing-section-content">
         <img class="portrait" src="{% static 'portfolio/portfolio_foto.jpg' %}">
@@ -18,7 +19,8 @@
             <span class="name-text">Beginner Programmer</span>
         </h2>
         <h3 class="landing-main-text">
-            Aspiring developer with Python & Django and knowledge of GIT, HTML, CSS, BootStrap, Heroku, PythonAnywhere and
+            Aspiring developer with Python & Django and knowledge of GIT, HTML, CSS, BootStrap, Heroku, PythonAnywhere
+            and
             others.<br>
             I have over 4 years of experience in IT and strong background in 3d graphic.<br>
             For more information and my projects please scroll down.
@@ -33,57 +35,61 @@
         </a>
     </div>
 </section>
+
+<!--Page section with skills.-->
 <section class="landing-section-secondary">
     <section class="landing-skills">
         <div style="text-align:center;">
             <h2>My skills:</h2>
             <br>
             <div class="row justify-content-center">
-            <div class="table-responsive">
-            <table id="center" class="table table-borderless">
-                <tbody>
-                <tr>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_python.png' %}"><br>
-                        <h3>Python</h3>
-                    </td>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_django.png' %}"><br>
-                        <h3>Django</h3>
-                    </td>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_git.png' %}"><br>
-                        <h3>GIT</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_html.png' %}"><br>
-                        <h3>HTML</h3>
-                    </td>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_css.png' %}"><br>
-                        <h3>CSS</h3>
-                    </td>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_bootstrap.png' %}"><br>
-                        <h3>BootStrap</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_heroku.png' %}"><br>
-                        <h3>Heroku</h3>
-                    </td>
-                    <td>
-                        <img class="icon" src="{% static 'portfolio/icon_pythonanywhere.png' %}"><br>
-                        <h3>Python<br>Anywhere</h3>
-                    </td>
-                </tr>
+                <div class="table-responsive">
+                    <table id="center" class="table table-borderless">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_python.png' %}"><br>
+                                <h3>Python</h3>
+                            </td>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_django.png' %}"><br>
+                                <h3>Django</h3>
+                            </td>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_git.png' %}"><br>
+                                <h3>GIT</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_html.png' %}"><br>
+                                <h3>HTML</h3>
+                            </td>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_css.png' %}"><br>
+                                <h3>CSS</h3>
+                            </td>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_bootstrap.png' %}"><br>
+                                <h3>BootStrap</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_heroku.png' %}"><br>
+                                <h3>Heroku</h3>
+                            </td>
+                            <td>
+                                <img class="icon" src="{% static 'portfolio/icon_pythonanywhere.png' %}"><br>
+                                <h3>Python<br>Anywhere</h3>
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
+                </div>
+            </div>
         </div>
-        </tbody>
-        </table>
-        </div></div></div><br>
+        <br>
 
         <div style="text-align:center;">
             <h2>My additional attributes:</h2><br>
@@ -93,18 +99,21 @@
                 <li>I am in IT industry for over 4 years now.</li>
                 <li>Experience with SVN, Perforce and Agile workflow.</li>
                 <li>Knowledge of Target Process, TeamGantt and Jira.</li>
-                <li>Skills in Photoshop and many others 3D software and game engines.</li>
+                <li>Skills in Photoshop and many other 3D software and game engines.</li>
+                <li>Basic knowledge of SEO, positioning and webmastering.</li>
                 <li>Languages: Polish - Native and English - Advanced.</li>
             </h3>
         </ul>
     </section>
 </section>
 
+<!--Page section with projects.-->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <center><h2>My projects:</h2></center>
         <br><br>
         <div class="row row-cols-1 row-cols-md-2">
+            <!--For loop for rendering all projects in bootstrap cards.-->
             {% for project in projects %}
             <div class="col sm-6">
                 <div class="card mt-4 text-center">
@@ -114,12 +123,15 @@
                     <div class="card-img-overlay d-flex flex-column justify-content-between">
                         <h2 class="card-title">{{ project.title }}</h2>
                         <div class="vertical-center">
-                            <a class="btn btn-outline-light btn-lg" href="{% url 'project_details' project.id %}" role="button">Details</a>
+                            <a class="btn btn-outline-light btn-lg" href="{% url 'project_details' project.id %}"
+                               role="button">Details</a>
                             {% if project.url_github %}
-                                <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" id="button_code" target="_blank" role="button">Code</a>
+                            <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" id="button_code"
+                               target="_blank" role="button">Code</a>
                             {% endif %}
                             {% if project.url_live %}
-                                <a class="btn btn-outline-light btn-lg" href="{{ project.url_live }}" id="button_live" target="_blank" role="button">Live</a>
+                            <a class="btn btn-outline-light btn-lg" href="{{ project.url_live }}" id="button_live"
+                               target="_blank" role="button">Live</a>
                             {% endif %}
                         </div>
                         <h5 class="card-text">{{ project.description|safe }}</h5>
@@ -130,7 +142,6 @@
         </div>
     </div>
 </div>
-    </div>
 
 {% include 'portfolio/partials/contact_section.html' %}
 
