@@ -34,15 +34,11 @@
        aria-expanded="false">
         Snippets
     </a>
-    <!--Dropdown with all categories for notes and snippets.-->
+    <!--Dropdown with all categories for notes and snippets. They come from context_processors.py-->
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=Python">Python</a>
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=Django">Django</a>
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=GIT">GIT</a>
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=Heroku">Heroku</a>
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=HTML">HTML</a>
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=CSS">CSS</a>
-        <a class="dropdown-item" href="{% url 'my_notes' %}?category=JavaScript">JavaScript</a>
+        {% for category in categories %}
+            <a class="dropdown-item" href="{% url 'my_notes' %}?category={{ category }}">{{ category }}</a>
+        {% endfor %}
     </div>
     <a href="#contact" class="nav-link header-link">Contact</a>
 </header>
