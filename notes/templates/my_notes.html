@@ -5,14 +5,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Python Notes</title>
 </head>
 <body>
 <!--This section is listing all notes and code snippets for given language.-->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-2">Python</h1>
-        <p class="lead">My various notes and code snippets for Python.</p>
+        <h1 class="display-2">{{ category }}</h1>
+        <p class="lead">My various notes and code snippets for {{ category }}.</p>
         <hr class="my-4">
         <div class="container">
             <div class="row">
@@ -22,13 +21,13 @@
                         <nav class="nav nav-pills flex-column">
                             <!--All notes links and for loop for them.-->
                             <a class="nav-link" href="#notes"><h4>Notes</h4></a>
-                            {% for note in python_notes %}
+                            {% for note in notes %}
                             <a class="nav-link" href="#note_{{ forloop.counter }}">{{ note.title }}</a>
                             {% endfor %}
 
                             <!--All code snippets links and for loop for them.-->
                             <a class="nav-link" href="#snippets"><h4>Code Snippets</h4></a>
-                            {% for note in python_snippets %}
+                            {% for note in snippets %}
                             <a class="nav-link" href="#snippet_{{ forloop.counter }}">{{ note.title }}</a>
                             {% endfor %}
                         </nav>
@@ -45,7 +44,7 @@
                         <h1 id="notes">Notes</h1>
 
                         <!--All notes content and for loop for them.-->
-                        {% for note in python_notes %}
+                        {% for note in notes %}
                         <h4 id="note_{{ forloop.counter }}">{{ note.title }}</h4>
                         <h5>{{ note.description }}</h5>
                         <p>{{ note.details|safe }}</p>
@@ -55,7 +54,7 @@
                         <h1 id="snippets">Code Snippets</h1>
 
                         <!--All code snippets content and for loop for them.-->
-                        {% for snippet in python_snippets %}
+                        {% for snippet in snippets %}
                         <h5 id="snippet_{{ forloop.counter }}">{{ note.title }}</h5>
                         <h5>{{ note.description }}</h5>
                         <p>{{ note.details|safe }}</p>

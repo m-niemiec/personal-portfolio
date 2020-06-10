@@ -2,12 +2,13 @@ from django.shortcuts import render, get_object_or_404
 from .models import Note
 
 
-# Each def represents one section of notes and code snippets.
-def my_python(request):
-    python_notes = Note.objects.filter(category__category="Python", sub_category__sub_category="Notes")
-    python_snippets = Note.objects.filter(category__category="Python", sub_category__sub_category="Code_Snippets")
+def my_notes(request):
+    category = request.GET['category']
+    notes = Note.objects.filter(category__category=category, sub_category__sub_category="Notes")
+    snippets = Note.objects.filter(category__category=category, sub_category__sub_category="Code_Snippets")
     context = {
-        'python_notes': python_notes,
-        'python_snippets': python_snippets
+        'notes': notes,
+        'snippets': snippets,
+        'category': category
     }
-    return render(request, 'notes/my_python.html', context)
+    return render(request, 'my_notes.html', context)

@@ -34,14 +34,15 @@
        aria-expanded="false">
         Snippets
     </a>
+    <!--Dropdown with all categories for notes and snippets.-->
     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="{% url 'my_python' %}">Python</a>
-        <a class="dropdown-item" href="#">Django</a>
-        <a class="dropdown-item" href="#">GIT</a>
-        <a class="dropdown-item" href="#">Heroku</a>
-        <a class="dropdown-item" href="#">HTML</a>
-        <a class="dropdown-item" href="#">CSS</a>
-        <a class="dropdown-item" href="#">JavaScript</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=Python">Python</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=Django">Django</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=GIT">GIT</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=Heroku">Heroku</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=HTML">HTML</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=CSS">CSS</a>
+        <a class="dropdown-item" href="{% url 'my_notes' %}?category=JavaScript">JavaScript</a>
     </div>
     <a href="#contact" class="nav-link header-link">Contact</a>
 </header>
