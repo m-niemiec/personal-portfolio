@@ -16,20 +16,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-3">
-
                     <nav id="navbar-example3" class="navbar sticky-top navbar-light">
                         <nav class="nav nav-pills flex-column">
                             <!--All notes links and for loop for them.-->
-                            <a class="nav-link" href="#notes"><h4>Notes</h4></a>
-                            {% for note in notes %}
-                            <a class="nav-link" href="#note_{{ forloop.counter }}">{{ note.title }}</a>
-                            {% endfor %}
+                            {% if notes %}
+                                <a class="nav-link" href="#notes"><h4>Notes</h4></a>
+                                {% for note in notes %}
+                                    <a class="nav-link" href="#note_{{ forloop.counter }}">{{ note.title }}</a>
+                                {% endfor %}
+                            {% endif %}
 
                             <!--All code snippets links and for loop for them.-->
-                            <a class="nav-link" href="#snippets"><h4>Code Snippets</h4></a>
-                            {% for note in snippets %}
-                            <a class="nav-link" href="#snippet_{{ forloop.counter }}">{{ note.title }}</a>
-                            {% endfor %}
+                            {% if snippets %}
+                                <a class="nav-link" href="#snippets"><h4>Code Snippets</h4></a>
+                                {% for note in snippets %}
+                                    <a class="nav-link" href="#snippet_{{ forloop.counter }}">{{ note.title }}</a>
+                                {% endfor %}
+                            {% endif %}
                         </nav>
                     </nav>
                 </div>
@@ -41,26 +44,27 @@
 
                 <div id="content" class="col-12 col-sm-9">
                     <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-                        <h1 id="notes">Notes</h1>
-
                         <!--All notes content and for loop for them.-->
-                        {% for note in notes %}
-                        <h4 id="note_{{ forloop.counter }}">{{ note.title }}</h4>
-                        <h5>{{ note.description }}</h5>
-                        <p>{{ note.details|safe }}</p>
-                        <hr class="my-4">
-                        {% endfor %}
-
-                        <h1 id="snippets">Code Snippets</h1>
+                        {% if notes %}
+                            <h1 id="notes">Notes</h1>
+                            {% for note in notes %}
+                                <h4 id="note_{{ forloop.counter }}">{{ note.title }}</h4>
+                                <h5>{{ note.description }}</h5>
+                                <p>{{ note.details|safe }}</p>
+                                <hr class="my-4">
+                            {% endfor %}
+                        {% endif %}
 
                         <!--All code snippets content and for loop for them.-->
-                        {% for snippet in snippets %}
-                        <h5 id="snippet_{{ forloop.counter }}">{{ note.title }}</h5>
-                        <h5>{{ note.description }}</h5>
-                        <p>{{ note.details|safe }}</p>
-                        <hr class="my-4">
-                        {% endfor %}
-
+                        {% if snippets %}
+                            <h1 id="snippets">Code Snippets</h1>
+                            {% for snippet in snippets %}
+                                <h5 id="snippet_{{ forloop.counter }}">{{ note.title }}</h5>
+                                <h5>{{ note.description }}</h5>
+                                <p>{{ note.details|safe }}</p>
+                                <hr class="my-4">
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

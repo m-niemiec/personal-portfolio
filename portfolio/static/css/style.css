@@ -7,6 +7,9 @@
      .landing-section-content {
          width: 90% !important;
     }
+    .project_images {
+         width: 90% !important;
+    }
      .name {
          font-size: 3em !important;
     }
@@ -232,4 +235,9 @@
      background: #383838;
      border-radius: 20%;
      margin: 10px;
+}
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators {
+	filter: invert(100%);
 }

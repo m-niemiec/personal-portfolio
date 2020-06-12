@@ -11,63 +11,63 @@
 <center>
     <br>
     <div class="jumbotron jumbotron-fluid">
-        <class="container">
-            <h1 class="display-4">{{ project.title }}</h1>
-            <br><br>
-            <img class="d-block w-100" src="{{ project.screenshot_main.url }}" alt="{{ project.title }}">
-            <br><br>
+        <class
+        ="container">
+        <h1 class="display-4">{{ project.title }}</h1>
+        <br><br>
+        <img class="project_images" src="{{ project.screenshot_main.url }}" alt="{{ project.title }}">
+        <br><br>
 
-            <!--Project description and details have safe tag in order to render html elements like <br> etc.-->
-            <p class="lead">{{ project.description|safe }}</p>
-            <br><br>
-            <p class="lead">{{ project.details|safe }}</p>
+        <!--Project description and details have safe tag in order to render html elements like <br> etc.-->
+        <p class="lead">{{ project.description|safe }}</p>
+        <br><br>
+        <p class="lead">{{ project.details|safe }}</p>
 
-            <!--If project have urls for github and/or live deploy they will be visible in buttons below.-->
-            {% if project.url_github %}
-            <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" target="_blank" role="button">View
-                Code</a>
-            {% endif %}
-            {% if project.url_live %}
-            <a class="btn btn-outline-light btn-lg" href="{{ project.url_live }}" target="_blank" role="button">View
-                Live</a>
-            {% endif %}
+        <!--If project have urls for github and/or live deploy they will be visible in buttons below.-->
+        {% if project.url_github %}
+        <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" target="_blank" role="button">View
+            Code</a>
+        {% endif %}
+        {% if project.url_live %}
+        <a class="btn btn-outline-light btn-lg" href="{{ project.url_live }}" target="_blank" role="button">View
+            Live</a>
+        {% endif %}
+        <br><br>
+        <!--Buttons for Next and Previous project.-->
+        {% if previous_project.id %}
+            <a href="{% url 'project_details' previous_project.id %}"><i class="material-icons"
+                                                                     style="font-size:50px">chevron_left</i></a>
+        {% endif %}
+        {% if next_project.id %}
+            <a href="{% url 'project_details' next_project.id %}"><i class="material-icons"
+                                                                 style="font-size:50px">chevron_right</i></a>
+        {% endif %}
 
-            <br><br>
-            <!--If project have screenshots they will be displayed in bootstrap carousel.-->
-            {% if project.screenshot_1 %}
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{ project.screenshot_1.url }}" alt="First Screenshot">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ project.screenshot_2.url }}" alt="Second Screenshot">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ project.screenshot_3.url }}" alt="Third Screenshot">
-                    </div>
+        <br><br>
+        <!--If project have screenshots they will be displayed in bootstrap carousel.-->
+        {% if project.screenshot_1 %}
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="project_images" src="{{ project.screenshot_1.url }}" alt="First Screenshot">
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="carousel-item">
+                    <img class="project_images" src="{{ project.screenshot_2.url }}" alt="Second Screenshot">
+                </div>
+                <div class="carousel-item">
+                    <img class="project_images" src="{{ project.screenshot_3.url }}" alt="Third Screenshot">
+                </div>
             </div>
-            {% endif %}<br>
-
-            <!--Buttons for Next and Previous project.-->
-            {% if previous_project.id %}
-                <a href="{% url 'project_details' previous_project.id %}"><i class="material-icons"
-                                                                             style="font-size:50px">chevron_left</i></a>
-            {% endif %}
-            {% if next_project.id %}
-                <a href="{% url 'project_details' next_project.id %}"><i class="material-icons"
-                                                                         style="font-size:50px">chevron_right</i></a>
-            {% endif %}
-
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        {% endif %}<br>
 </center>
 
 {% include 'portfolio/partials/contact_section.html' %}
