@@ -8,3 +8,4 @@ Scripts/
 .idea/
 /static/
 local_settings.py
+media
