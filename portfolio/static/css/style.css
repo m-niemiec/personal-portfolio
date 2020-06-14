@@ -8,7 +8,7 @@
          width: 90% !important;
     }
      .project_images {
-         width: 90% !important;
+         max-width: 90vw !important;
     }
      .name {
          font-size: 3em !important;
@@ -17,7 +17,7 @@
          font-size: 0.8em !important;
     }
      .card-title{
-         font-size: 2em !important;
+         font-size: 1.75em !important;
     }
      .card-text{
          line-height: 1.5em !important;
@@ -238,4 +238,7 @@
 }
  .carousel-control-next, .carousel-control-prev, .carousel-indicators {
      filter: invert(100%);
+}
+ .project_images {
+     max-height: 540px !important;
 }
