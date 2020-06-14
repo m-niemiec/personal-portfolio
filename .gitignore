@@ -6,6 +6,6 @@ __pycache__/
 Lib/
 Scripts/
 .idea/
-static/
+/static/
 local_settings.py
 media
