@@ -20,8 +20,8 @@
         <!--Project description and details have safe tag in order to render html elements like <br> etc.-->
         <p class="lead">{{ project.description|safe }}</p>
         <br><br>
-        <p class="lead">{{ project.details|safe }}</p>
-
+        <p class="lead text-left">{{ project.details|safe }}</p>
+        <br>
         <!--If project have urls for github and/or live deploy they will be visible in buttons below.-->
         {% if project.url_github %}
         <a class="btn btn-outline-light btn-lg" href="{{ project.url_github }}" target="_blank" role="button">View
