@@ -58,7 +58,7 @@
                         <!--All code snippets content and for loop for them.-->
                         {% if snippets %}
                             <h1 id="snippets">Code Snippets</h1>
-                            {% for snippet in snippets %}
+                            {% for note in snippets %}
                                 <h5 id="snippet_{{ forloop.counter }}">{{ note.title }}</h5>
                                 <h5>{{ note.description }}</h5>
                                 <p>{{ note.details|safe }}</p>
