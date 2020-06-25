@@ -24,7 +24,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['michalniemiec.eu.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.michalniemiec.info']
 
 
 # Application definition
