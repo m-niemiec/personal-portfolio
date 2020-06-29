@@ -4,6 +4,10 @@
          width: 120px !important;
          padding: 10px !important;
     }
+     .landing-section {
+         min-height: 450px !important;
+         height: 100vh;
+    }
      .landing-section-content {
          width: 90% !important;
     }
