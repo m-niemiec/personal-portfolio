@@ -6,8 +6,6 @@ I created this website to present my skills and projects. I also created little 
 
 In development I used Django, Python, HTML, CSS, Bootstrap and hosted this on PythonAnywhere.
 
-You can check out this site live at - https://www.michalniemiec.info/
-
 Cheers!
 
 Some additional screenshots:
